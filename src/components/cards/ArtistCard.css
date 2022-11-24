@@ -1,0 +1,26 @@
+.artistCardBody {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:30vw
+}
+
+@media (max-width: 1250px) {
+    .artistCardBody {
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        width:40vw
+    }
+  }
+
+.artistCardRightSection {
+    display: flex;
+    font-size:small;
+    font-weight:lighter;
+}
+
+.artistCardList {
+    list-style-type: none; 
+    padding-inline-start: 0px;
+}
