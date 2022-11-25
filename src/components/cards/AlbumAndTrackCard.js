@@ -1,9 +1,9 @@
 import React from "react";
 import "./AlbumAndTackCard.css";
-function AlbumAndTrackCard({ data }) {
+function AlbumAndTrackCard({ data, width }) {
   console.log(data);
   return (
-    <div className="album-track-card">
+    <div className="album-track-card" style={{width: width ? width : undefined}}>
       <div className="album-track-card-image" style={{ backgroundColor: "purple" }}>
         <img alt={data.name} src={data.image[0]["#text"]} />
       </div>

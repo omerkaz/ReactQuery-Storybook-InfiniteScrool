@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect, useState } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useInfiniteQuery } from "react-query";
@@ -6,14 +6,10 @@ import { addselectedArtist } from "./topArtistListSlice";
 import { v4 as uuidv4 } from "uuid";
 import ArtistCard from "../cards/ArtistCard";
 import "./TopArtistList.css";
-import { hover } from "@testing-library/user-event/dist/hover";
 
 const linkStyle = {
   textDecoration: "none",
   color: "inherit",
-  hover: {
-    color: "yellow"
-  }
 };
 
 const fetchData = async (page) => {
@@ -73,7 +69,7 @@ function TopArtistList() {
                   to={`/${item.mbid}`}
                   style={linkStyle}
                 >
-                  <ArtistCard data={item} />
+                  <ArtistCard data={item} imageBackgroundColor="purple" />
                 </Link>
               </div>
             ))

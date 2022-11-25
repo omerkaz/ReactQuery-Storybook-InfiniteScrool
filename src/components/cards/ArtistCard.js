@@ -1,10 +1,13 @@
 import React from "react";
 import "./ArtistCard.css";
 
-function ArtistCard({ data }) {
+function ArtistCard({ data, imageBackgroundColor, width }) {
   return (
-    <div className="card">
-      <div className="card-image" style={{ backgroundColor: "purple" }}>
+    <div className="card" style={{width: width ? width : undefined}}>
+      <div
+        className="card-image"
+        style={{ backgroundColor: imageBackgroundColor }}
+      >
         <img alt={data.name} src={data.image[0]["#text"]} />
       </div>
       <div className="card-body">
@@ -22,7 +25,15 @@ function ArtistCard({ data }) {
           </div>
           <div className="card-artist" style={{ backgroundColor: "yellow" }}>
             <span className="card-artist-header">Artist</span>
-            <hr style={{ width: "30%", marginRight: "90%", border: "1px solid black", marginTop: "0px", marginBottom: "0px" }}></hr>
+            <hr
+              style={{
+                width: "30%",
+                marginRight: "90%",
+                border: "1px solid black",
+                marginTop: "0px",
+                marginBottom: "0px",
+              }}
+            ></hr>
             <span className="card-artist-name">{data.name}</span>
           </div>
         </div>
