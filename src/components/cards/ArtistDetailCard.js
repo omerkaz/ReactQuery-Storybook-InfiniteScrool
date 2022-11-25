@@ -1,54 +1,38 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getSelecedArtist } from "../artist/topArtistListSlice";
-import './ArtistDetailCard.css'
+import "./ArtistDetailCard.css";
 
 function ArtistCardDetail() {
-  const artist = useSelector(getSelecedArtist)
+  const data = useSelector(getSelecedArtist);
 
-console.log(artist)
   return (
-    // <div className="artist-CARD">
-    //   <div className="image">
-    //     <img src={artist.image[0]["#text"]} />
-    //   </div>
-    //   <div className="artistName">{artist.name}</div>
-    //   <div className="artistInfo">zort</div>
-    // </div>
-
-    <div className="courses-container">
-      <div className="course">
-        <div className="course-preview">
-          <img src={artist.image[0]["#text"]} />
-        </div>
-        <div className="course-info">
-          <div className="progress-container">
-            <p className="progress-text">{artist.listeners}</p>
-            <p className="progress-text">{artist.playcount}</p>
+    <div className="card">
+      <div className="card-image" style={{ backgroundColor: "purple" }}>
+        <img alt={data.name} src={data.image[0]["#text"]} />
+      </div>
+      <div className="card-body">
+        <div className="card-info">
+          <div
+            className="card-artist-info"
+            style={{ backgroundColor: "orange" }}
+          >
+            <span className="card-artist-info-text">
+              listeners:<i>{data.listeners}</i>
+            </span>
+            <span className="card-artist-info-text">
+              playcount:<i>{data.playcount}</i>
+            </span>
           </div>
-          <h4>Artist</h4>
-          <h2>{artist.name}</h2>
+          <div className="card-artist" style={{ backgroundColor: "yellow" }}>
+            <span className="card-artist-header">Artist</span>
+            <hr style={{ width: "30%", marginRight: "90%", border: "1px solid purple" }}></hr>
+            <span className="card-artist-name">{data.name}</span>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-{
-  /* <div class="courses-container">
-  <div class="course">
-    <div class="course-preview">
-      <img src={artist.image[0]["#text"]} />
-    </div>
-    <div class="course-info">
-      <div class="progress-container">
-        <p class="progress-text">6/9 Challenges</p>
-        <p class="progress-text">6/9 Challenges</p>
-      </div>
-      <h6>Artist</h6>
-      <h2>{artist.name}</h2>
-    </div>
-  </div>
-</div>; */
-}
+
 export default ArtistCardDetail;

@@ -1,4 +1,4 @@
-.card {
+.album-track-card {
   display: flex;
   overflow: hidden;
   border-radius: 1vw;
@@ -7,28 +7,29 @@
   background-color: #fff;
   border-radius: 0.5vw;
   box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
+  margin-left: 1vh;
 }
-.card-image {
+.album-track-card-image {
   display: flex;
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
   padding: 0px 15px 0px 15px;
 }
-.card-image img {
+.album-track-card-image img {
   height: 50%;
 }
-.card-body {
-  width: 50vw;
+.album-track-card-body {
+  width: 30vw;
 }
-.card-info {
+.album-track-card-info {
   display: flex;
   flex-direction: row-reverse;
   height: 100%;
 }
 
-.card-artist {
+.album-track-card-artist {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -36,28 +37,23 @@
   padding: 0px 2vw 0px 2vw;
   width: 100%;
 }
-.card-artist-header {
+.album-track-card-artist-header {
   font-size: 2vh;
   font-weight: bold;
 }
-.card-artist-name {
+.album-track-card-artist-name {
   font-size: 2.5vh;
-  font-weight: bold;
+  text-overflow: ellipsis; /* enables ellipsis */ /* keeps the text in a single line */
+  overflow: hidden;
 }
 
-.card-artist-info {
+.album-track-card-artist-info {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   width: 15vw;
-  padding: 0px 0px 0px 1vw;
-}
-
-.card-artist-info-text {
-  font-size: 1vh;
-  opacity: 0.6;
-  letter-spacing: 1px;
+  padding: 0px 2vw 0px 2vw;
 }
 
 h2 {

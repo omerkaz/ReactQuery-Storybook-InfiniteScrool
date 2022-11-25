@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from "uuid";
 import AlbumAndTrackCard from "../cards/AlbumAndTrackCard";
 import ArtistDetailCard from "../cards/ArtistDetailCard";
 import { getSelecedArtist } from "./topArtistListSlice";
@@ -20,29 +20,28 @@ function ArtistDetail() {
     ).then((res) => res.json())
   );
 
-  if (topTracksApiResponse.isLoading || topAlbumsApiResponse.isLoading) {
+  if (topTracksApiResponse.isLoading || topAlbumsApiResponse.isLoading)
     return <div>Loading</div>;
-  } else {
-    return (
-      <main className="main">
-        <div>
-          <ArtistDetailCard />
+
+  return (
+    <main className="main">
+      <div className="top-section">
+        <ArtistDetailCard />
+      </div>
+      <div className="bottom-section">
+        <div className="bottom-section-album">
+          {topAlbumsApiResponse.data.topalbums.album.map((item) => (
+            <AlbumAndTrackCard key={uuidv4()} data={item} />
+          ))}
         </div>
-        <div>
-          <div>
-            {topAlbumsApiResponse.data.topalbums.album.map((item) => (
-              <AlbumAndTrackCard key={uuidv4()} data={item} />
-            ))}
-          </div>
-          <div>
-            {topTracksApiResponse.data.toptracks.track.map((item) => (
-              <AlbumAndTrackCard key={uuidv4()} data={item} />
-            ))}
-          </div>
+        <div className="bottom-section-tracks">
+          {topTracksApiResponse.data.toptracks.track.map((item) => (
+            <AlbumAndTrackCard key={uuidv4()} data={item} />
+          ))}
         </div>
-      </main>
-    );
-  }
+      </div>
+    </main>
+  );
 }
 
 export default ArtistDetail;

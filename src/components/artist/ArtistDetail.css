@@ -1,0 +1,25 @@
+@media screen and (max-width: 1300px) {
+  .bottom-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .bottom-section-tracks {
+    display: block;
+  }
+  .album-track-card-body {
+    display: block;
+    width: 100%;
+  }
+  .card {
+    width: 50vw;
+  }
+}
+
+.bottom-section {
+  display: flex;
+}
+
+.top-section {
+  display: flex;
+  justify-content: center;
+}

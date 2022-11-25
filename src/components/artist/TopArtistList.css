@@ -1,5 +1,7 @@
 .main {
-    margin: 10vh 10vw;
-    display: grid; 
-    justify-content: center;
+  margin: 8vh 10vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
