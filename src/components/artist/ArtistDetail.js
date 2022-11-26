@@ -1,12 +1,15 @@
 import { useQuery } from "react-query";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import { getDarkMode } from "../headerSlice";
+import { getSelecedArtist } from "./topArtistListSlice";
 import AlbumAndTrackCard from "../cards/AlbumAndTrackCard";
 import ArtistDetailCard from "../cards/ArtistDetailCard";
-import { getSelecedArtist } from "./topArtistListSlice";
+
 import "./ArtistDetail.css";
 
 function ArtistDetail() {
+  const darkMode = useSelector(getDarkMode);
   const artist = useSelector(getSelecedArtist);
 
   const topAlbumsApiResponse = useQuery("getTopAlbum", () =>
@@ -30,7 +33,9 @@ function ArtistDetail() {
   return (
     <main className="main">
       <div className="top-section">
-        <ArtistDetailCard />
+      <div className={darkMode ? "dark-mode-artist-detail-list" : null}>
+        <ArtistDetailCard imageBackgroundColor={darkMode ? "black": "purple"} infoBackgroundColor={darkMode ? "black": "orange"} artistBackgroundColor={darkMode ? "black": "yellow"} />
+        </div>
       </div>
 
       <div className="bottom-section">
@@ -38,14 +43,18 @@ function ArtistDetail() {
         <h4 className="bottom-section-albums-header" style={{textAlign: "center"}}>Top Albums</h4>
         <hr className="bottom-section-albums-line"></hr>
           {topAlbumsApiResponse.data.topalbums.album.map((item) => (
-            <AlbumAndTrackCard key={uuidv4()} data={item} />
+            <div className={darkMode ? "dark-mode-artist-detail-list" : null}>
+            <AlbumAndTrackCard imageBackgroundColor={darkMode ? "black": "purple"} infoBackgroundColor={darkMode ? "black": "orange"} artistBackgroundColor={darkMode ? "black": "yellow"} key={uuidv4()} data={item} />
+            </div>
           ))}
         </div>
         <div className="bottom-section-tracks">
         <h4 className="bottom-section-tracks-header" style={{textAlign: "center"}}>Top Tracks</h4>
         <hr className="bottom-section-tracks-line"></hr>
           {topTracksApiResponse.data.toptracks.track.map((item) => (
-            <AlbumAndTrackCard key={uuidv4()} data={item} />
+            <div className={darkMode ? "dark-mode-artist-detail-list" : null}>
+            <AlbumAndTrackCard imageBackgroundColor={darkMode ? "black": "purple"} infoBackgroundColor={darkMode ? "black": "orange"} artistBackgroundColor={darkMode ? "black": "yellow"} key={uuidv4()} data={item} />
+            </div>
           ))}
         </div>
       </div>

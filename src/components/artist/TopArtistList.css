@@ -28,3 +28,10 @@
       transform: rotate(360deg);
   }
   } 
+
+  .dark-mode-top-artist-list {
+    border-style: solid;
+    border-radius: 1vw;
+    
+    margin-bottom: 2vh;
+  }

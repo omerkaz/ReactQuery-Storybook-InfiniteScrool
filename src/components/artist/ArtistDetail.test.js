@@ -15,5 +15,5 @@ test("ArtistDetail renders correctly", () => {
   );
 
   const artistDetailFirstEl = screen.getByTestId(/firstEl/i);
-  expect(artistDetailFirstEl).toHaveTextContent("Loading");
+  expect(artistDetailFirstEl).toBeInTheDocument()
 });

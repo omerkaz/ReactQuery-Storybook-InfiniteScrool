@@ -23,3 +23,11 @@
   color: black;
   font-weight: bolder;
 }
+
+.dark-mode-footer {
+  border-style: solid;
+  border-radius: 1vw;
+  background: black!important;
+  color: wheat!important;
+}
+

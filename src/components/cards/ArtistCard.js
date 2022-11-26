@@ -2,6 +2,8 @@ import React from "react";
 import "./ArtistCard.css";
 
 function ArtistCard({ data, imageBackgroundColor, infoBackgroundColor, artistBackgroundColor, width }) {
+ 
+
   return (
     <div data-testid="firstEl" className="card" style={{ width: width }}>
       <div

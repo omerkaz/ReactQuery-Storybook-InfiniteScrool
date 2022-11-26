@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useInfiniteQuery } from "react-query";
 import { addselectedArtist } from "./topArtistListSlice";
+import { useSelector } from "react-redux";
+import { getDarkMode } from "../headerSlice";
 import { v4 as uuidv4 } from "uuid";
 import ArtistCard from "../cards/ArtistCard";
 import "./TopArtistList.css";
@@ -20,6 +22,7 @@ const fetchData = async (page) => {
 };
 
 function TopArtistList() {
+  const darkMode = useSelector(getDarkMode);
   const observerElem = useRef(null);
   const dispatch = useDispatch();
   const { data, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage } =
@@ -58,18 +61,18 @@ function TopArtistList() {
   return (
     <>
       <main data-testid="firstEl" className="main">
-        {!isSuccess && <span data-testid="secondEl" class="loader"></span>}
+        {!isSuccess && <span data-testid="secondEl" className="loader"></span>}
 
         {isSuccess &&
           data.pages.map((filteredPage) =>
-            filteredPage.artists.artist.map((item, index) => (
-              <div style={{ display: "flex" }} key={uuidv4()}>
+            filteredPage.artists.artist.map((item) => (
+              <div  className={darkMode ? "dark-mode-top-artist-list" : null} style={{ display: "flex", }} key={uuidv4()}>
                 <Link
                   onClick={() => dispatch(addselectedArtist(item))}
                   to={`artist/${item.mbid}`}
                   style={linkStyle}
                 >
-                  <ArtistCard data={item} imageBackgroundColor="purple" />
+                  <ArtistCard data={item} imageBackgroundColor={darkMode ? "black": "purple"} infoBackgroundColor={darkMode ? "black": "orange"} artistBackgroundColor={darkMode ? "black": "yellow"} />
                 </Link>
               </div>
             ))

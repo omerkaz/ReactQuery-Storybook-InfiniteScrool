@@ -1,8 +1,8 @@
 import React from 'react'
 import './Footer.css'
-function Footer({textContent = "NML ℗™ 2022"}) {
+function Footer({darkModeClass,textContent = "NML ℗™ 2022"}) {
   return (
-    <footer data-testid="firstEl" className='footer'>{textContent}</footer>
+    <footer data-testid="firstEl" className={darkModeClass}>{textContent}</footer>
   )
 }
 

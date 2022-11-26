@@ -17,5 +17,5 @@ test("TopArtistList renders correctly", () => {
   const topArtistListFirstEl = screen.getByTestId(/firstEl/i);
   const topArtistListSecondEl = screen.getByTestId(/secondEl/i);
   expect(topArtistListFirstEl).toContainElement(topArtistListSecondEl);
-  expect(topArtistListSecondEl).toHaveTextContent("Loading")
+  expect(topArtistListSecondEl).toBeInTheDocument()
 });

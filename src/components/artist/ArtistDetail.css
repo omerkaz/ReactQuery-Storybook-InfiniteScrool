@@ -14,7 +14,7 @@
     width: 50vw;
   }
   .bottom-section-tracks {
-    margin-left: 0vw!important;
+    margin-left: 0vw !important;
   }
 }
 
@@ -77,4 +77,13 @@
 .top-section {
   display: flex;
   justify-content: center;
+}
+
+.dark-mode-artist-detail-list {
+  border-style: solid;
+  border-radius: 1vw;
+
+  margin-bottom: 2vh;
+  max-width: 100vw;
+  height: 10vh;
 }

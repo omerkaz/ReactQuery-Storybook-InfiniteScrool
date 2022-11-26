@@ -1,7 +1,14 @@
 import { screen, render } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
 import Header from "./Header";
+
 test("Header renders correctly", () => {
-  render(<Header />);
+  render(
+    <Provider store={store}>
+      <Header />
+    </Provider>
+  );
 
   const headerFirstEl = screen.getByText(/neverland music library/i);
   const headerSecondEl = screen.getByTestId(/secondEl/i);

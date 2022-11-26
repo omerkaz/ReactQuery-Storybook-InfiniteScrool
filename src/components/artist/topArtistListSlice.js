@@ -22,7 +22,7 @@ export const topArtistListSlice = createSlice({
   reducers: {
     addselectedArtist: (state, action) => {
       state.selectedArtist = action.payload;
-      console.log(action.payload)
+      // console.log(action.payload)
     },
   },
 });
