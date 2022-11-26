@@ -1,3 +1,9 @@
+@media screen and (max-width: 660px) {
+  .card-artist-info {
+    display: none!important;
+  }
+}
+
 .artist-detail-card {
   display: flex;
   overflow: hidden;
@@ -8,6 +14,7 @@
   box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
   margin-bottom: 3vh;
 }
+
 .card-image {
   display: flex;
   align-content: center;

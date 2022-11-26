@@ -1,3 +1,11 @@
+@media screen and (max-width: 600px) {
+  .album-track-card-artist-info {
+    display: none!important;
+  }
+  .album-track-card-artist {
+    width: 100%!important;
+  }
+}
 .album-track-card {
   display: flex;
   overflow: hidden;
@@ -8,7 +16,6 @@
   border-radius: 0.5vw;
   box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
   margin-bottom: 2vh;
-  margin-left: 1vh;
 }
 .album-track-card-image {
   display: flex;

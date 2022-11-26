@@ -66,7 +66,7 @@ function TopArtistList() {
               <div style={{ display: "flex" }} key={uuidv4()}>
                 <Link
                   onClick={() => dispatch(addselectedArtist(item))}
-                  to={`/${item.mbid}`}
+                  to={`artist/${item.mbid}`}
                   style={linkStyle}
                 >
                   <ArtistCard data={item} imageBackgroundColor="purple" />

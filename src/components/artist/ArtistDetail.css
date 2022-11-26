@@ -13,6 +13,9 @@
   .card {
     width: 50vw;
   }
+  .bottom-section-tracks {
+    margin-left: 0vw!important;
+  }
 }
 
 .loader {
@@ -38,6 +41,10 @@
 
 .bottom-section {
   display: flex;
+  margin-bottom: 2vh;
+}
+.bottom-section-tracks {
+  margin-left: 2vw;
 }
 
 .bottom-section-albums-header {
