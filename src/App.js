@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<TopArtistList />} />
-        <Route path="/:artistMbid" element={<ArtistDetail />} /> 
+        <Route data-testid="lastEl" path="/:artistMbid" element={<ArtistDetail />} /> 
       </Routes>
       <Footer />
     </>

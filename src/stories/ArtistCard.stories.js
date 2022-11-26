@@ -24,9 +24,10 @@ withData.args = {
       },
     ],
   },
-  imageBackgroundColor: "purple" || "blue",
-  width: "25vw"
-
+  width: "(Ex: 30vw)",
+  imageBackgroundColor: "purple",
+  infoBackgroundColor: "orange",
+  artistBackgroundColor: "yellow",
 };
 
 export const withOutData = Template.bind({});
@@ -46,6 +47,8 @@ withOutData.args = {
       },
     ],
   },
-  imageBackgroundColor: "purple" || "blue",
-  width: "25vw"
+  width: "(Ex: 30vw)",
+  imageBackgroundColor: "purple",
+  infoBackgroundColor: "orange",
+  artistBackgroundColor: "yellow",
 };

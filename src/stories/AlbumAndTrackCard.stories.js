@@ -7,7 +7,7 @@ export default {
 
 const Template = (args) => <AlbumAndTrackCard {...args} />;
 
-export const withData = Template.bind({});
+export const withData = Template.bind();
 withData.args = {
   data: {
     name: "Fearless",
@@ -27,7 +27,10 @@ withData.args = {
       },
     ],
   },
-  width: "25vw"
+  width: "25vw",
+  imageBackgroundColor: "purple",
+  infoBackgroundColor: "orange",
+  artistBackgroundColor: "yellow",
 };
 
 export const withOutData = Template.bind({});
@@ -44,11 +47,13 @@ withOutData.args = {
     },
     image: [
       {
-        "#text":
-          "",
+        "#text": "",
         size: "",
       },
     ],
   },
-  width: "25vw"
+  width: "25vw",
+  imageBackgroundColor: "purple",
+  infoBackgroundColor: "orange",
+  artistBackgroundColor: "yellow",
 };

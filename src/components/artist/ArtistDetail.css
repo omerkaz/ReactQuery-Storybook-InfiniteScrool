@@ -15,8 +15,56 @@
   }
 }
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin-bottom: 2vh;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .bottom-section {
   display: flex;
+}
+
+.bottom-section-albums-header {
+  font-size: 2vh;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0.8vh;
+}
+
+.bottom-section-tracks-header {
+  font-size: 2vh;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0.8vh;
+}
+
+.bottom-section-albums-line {
+  width: 100%;
+  margin-right: 90%;
+  border: 1px solid rgba(59, 173, 227, 1);
+  margin-top: 0px;
+}
+.bottom-section-tracks-line {
+  width: 100%;
+  margin-right: 90%;
+  border: 1px solid rgba(255, 53, 127, 1);
+  margin-top: 0px;
 }
 
 .top-section {

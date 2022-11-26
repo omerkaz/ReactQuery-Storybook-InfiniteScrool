@@ -1,8 +1,8 @@
 import React from 'react'
 import './Footer.css'
-function Footer() {
+function Footer({textContent = "NML ℗™ 2022"}) {
   return (
-    <footer className='footer'>NML ℗™ 2022</footer>
+    <footer data-testid="firstEl" className='footer'>{textContent}</footer>
   )
 }
 

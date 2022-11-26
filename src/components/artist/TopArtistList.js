@@ -57,8 +57,8 @@ function TopArtistList() {
 
   return (
     <>
-      <main className="main">
-        {!isSuccess ? <div>Loading</div> : null}
+      <main data-testid="firstEl" className="main">
+        {!isSuccess && <span data-testid="secondEl" class="loader"></span>}
 
         {isSuccess &&
           data.pages.map((filteredPage) =>

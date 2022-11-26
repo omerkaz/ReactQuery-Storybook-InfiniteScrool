@@ -3,30 +3,34 @@ import { useSelector } from "react-redux";
 import { getSelecedArtist } from "../artist/topArtistListSlice";
 import "./ArtistDetailCard.css";
 
-function ArtistCardDetail() {
-  const data = useSelector(getSelecedArtist);
+function ArtistDetailCard({data, imageBackgroundColor, infoBackgroundColor, artistBackgroundColor }) {
+  data = useSelector(getSelecedArtist)
 
   return (
-    <div className="card">
-      <div className="card-image" style={{ backgroundColor: "purple" }}>
-        <img alt={data.name} src={data.image[0]["#text"]} />
+    <div data-testid="firstEl" className="artist-detail-card">
+      <div
+        data-testid="secondEl"
+        className="card-image"
+        style={{ backgroundColor: imageBackgroundColor }}
+      >
+        <img alt={data?.name} src={data.image[0]["#text"]} />
       </div>
       <div className="card-body">
         <div className="card-info">
           <div
             className="card-artist-info"
-            style={{ backgroundColor: "orange" }}
+            style={{ backgroundColor: infoBackgroundColor }}
           >
             <span className="card-artist-info-text">
-              listeners:<i>{data.listeners}</i>
+              listeners: <i>{data.listeners}</i>
             </span>
             <span className="card-artist-info-text">
-              playcount:<i>{data.playcount}</i>
+              playcount: <i>{data.playcount}</i>
             </span>
           </div>
-          <div className="card-artist" style={{ backgroundColor: "yellow" }}>
-            <span className="card-artist-header">Artist</span>
-            <hr style={{ width: "30%", marginRight: "90%", border: "1px solid purple" }}></hr>
+          <div className="card-artist" style={{ backgroundColor: artistBackgroundColor }}>
+            <span data-testid="artistHeader" className="card-artist-header">Artist</span>
+            <hr className="card-artist-header-line"></hr>
             <span className="card-artist-name">{data.name}</span>
           </div>
         </div>
@@ -35,4 +39,10 @@ function ArtistCardDetail() {
   );
 }
 
-export default ArtistCardDetail;
+ArtistDetailCard.defaultProps = {
+  imageBackgroundColor: "purple",
+  infoBackgroundColor: "orange",
+  artistBackgroundColor: "yellow",
+}
+
+export default ArtistDetailCard;

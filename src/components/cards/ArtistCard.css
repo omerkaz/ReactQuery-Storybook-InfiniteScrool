@@ -1,13 +1,17 @@
 .card {
   display: flex;
   overflow: hidden;
-  border-radius: 1vw;
   width: 40vw;
   height: 10vh;
   background-color: #fff;
   border-radius: 0.5vw;
   box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
   margin-bottom: 1vh;
+}
+.card:hover {
+  color:brown;
+  width: 42vw;
+  height: 12vh;
 }
 .card-image {
   display: flex;
@@ -18,6 +22,7 @@
 }
 .card-image img {
   height: 50%;
+  border-radius: 8px;
 }
 .card-body {
   width: 50vw;
@@ -38,8 +43,16 @@
 }
 .card-artist-header {
   font-size: 2vh;
-  font-weight: bold;
+  font-weight: 600;
 }
+.card-artist-header-line {
+  width: 30%;
+  margin-right: 90%;
+  border: 1px solid black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .card-artist-name {
   font-size: 2.5vh;
   font-weight: bold;

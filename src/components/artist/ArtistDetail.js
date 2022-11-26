@@ -21,20 +21,29 @@ function ArtistDetail() {
   );
 
   if (topTracksApiResponse.isLoading || topAlbumsApiResponse.isLoading)
-    return <div>Loading</div>;
+    return (
+    <main className="main">
+      <span data-testid="firstEl" className="loader"></span>
+    </main>
+    ) 
 
   return (
     <main className="main">
       <div className="top-section">
         <ArtistDetailCard />
       </div>
+
       <div className="bottom-section">
         <div className="bottom-section-album">
+        <h4 className="bottom-section-albums-header" style={{textAlign: "center"}}>Top Albums</h4>
+        <hr className="bottom-section-albums-line"></hr>
           {topAlbumsApiResponse.data.topalbums.album.map((item) => (
             <AlbumAndTrackCard key={uuidv4()} data={item} />
           ))}
         </div>
         <div className="bottom-section-tracks">
+        <h4 className="bottom-section-tracks-header" style={{textAlign: "center"}}>Top Tracks</h4>
+        <hr className="bottom-section-tracks-line"></hr>
           {topTracksApiResponse.data.toptracks.track.map((item) => (
             <AlbumAndTrackCard key={uuidv4()} data={item} />
           ))}
