@@ -25,15 +25,15 @@ function TopArtistList() {
   const darkMode = useSelector(getDarkMode);
   const observerElem = useRef(null);
   const dispatch = useDispatch();
-  const { data, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage } =
+  const { data, isSuccess, hasNextPage, fetchNextPage } =
     useInfiniteQuery(
       "getTopArtist",
       ({ pageParam = 1 }) => fetchData(pageParam),
       {
         getNextPageParam: (lastPage, allPages) => {
           const nextPage = allPages.length + 1;
-          console.log(allPages);
-          console.log(nextPage);
+          // console.log(allPages);
+          // console.log(nextPage);
           return lastPage.artists.length !== 0 ? nextPage : undefined;
         },
       }
@@ -64,15 +64,24 @@ function TopArtistList() {
         {!isSuccess && <span data-testid="secondEl" className="loader"></span>}
 
         {isSuccess &&
-          data.pages.map((filteredPage) =>
-            filteredPage.artists.artist.map((item) => (
-              <div  className={darkMode ? "dark-mode-top-artist-list" : null} style={{ display: "flex", }} key={uuidv4()}>
+          data.pages.map((page) =>
+            page.artists.artist.map((item) => (
+              <div
+                className={darkMode ? "dark-mode-top-artist-list" : null}
+                style={{ display: "flex" }}
+                key={uuidv4()}
+              >
                 <Link
                   onClick={() => dispatch(addselectedArtist(item))}
                   to={`artist/${item.mbid}`}
                   style={linkStyle}
                 >
-                  <ArtistCard data={item} imageBackgroundColor={darkMode ? "black": "purple"} infoBackgroundColor={darkMode ? "black": "orange"} artistBackgroundColor={darkMode ? "black": "yellow"} />
+                  <ArtistCard
+                    data={item}
+                    imageBackgroundColor={darkMode ? "black" : "purple"}
+                    infoBackgroundColor={darkMode ? "black" : "orange"}
+                    artistBackgroundColor={darkMode ? "black" : "yellow"}
+                  />
                 </Link>
               </div>
             ))

@@ -13,7 +13,7 @@ function ArtistDetailCard({data, imageBackgroundColor, infoBackgroundColor, arti
         className="card-image"
         style={{ backgroundColor: imageBackgroundColor }}
       >
-        <img alt={data?.name} src={data.image[0]["#text"]} />
+        <img alt={data?.name} src={data?.image[0]["#text"]} />
       </div>
       <div className="card-body">
         <div className="card-info">
@@ -22,16 +22,16 @@ function ArtistDetailCard({data, imageBackgroundColor, infoBackgroundColor, arti
             style={{ backgroundColor: infoBackgroundColor }}
           >
             <span className="card-artist-info-text">
-              listeners: <i>{data.listeners}</i>
+              listeners: <i>{data?.listeners}</i>
             </span>
             <span className="card-artist-info-text">
-              playcount: <i>{data.playcount}</i>
+              playcount: <i>{data?.playcount}</i>
             </span>
           </div>
           <div className="card-artist" style={{ backgroundColor: artistBackgroundColor }}>
             <span data-testid="artistHeader" className="card-artist-header">Artist</span>
             <hr className="card-artist-header-line"></hr>
-            <span className="card-artist-name">{data.name}</span>
+            <span className="card-artist-name">{data?.name}</span>
           </div>
         </div>
       </div>

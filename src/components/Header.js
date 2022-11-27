@@ -30,7 +30,10 @@ function Header() {
           Neverland Music Library
         </h1>
       </Link>
-      <button className={darkMode ? "dark-mode-button-dark" : "dark-mode-button"} onClick={() => dispatch(switchDarkMode())}>
+      <button
+        className={darkMode ? "dark-mode-button-dark" : "dark-mode-button"}
+        onClick={() => dispatch(switchDarkMode())}
+      >
         {darkMode ? "Light" : "Dark"}
       </button>
     </>
