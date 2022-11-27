@@ -25,19 +25,18 @@ function TopArtistList() {
   const darkMode = useSelector(getDarkMode);
   const observerElem = useRef(null);
   const dispatch = useDispatch();
-  const { data, isSuccess, hasNextPage, fetchNextPage } =
-    useInfiniteQuery(
-      "getTopArtist",
-      ({ pageParam = 1 }) => fetchData(pageParam),
-      {
-        getNextPageParam: (lastPage, allPages) => {
-          const nextPage = allPages.length + 1;
-          // console.log(allPages);
-          // console.log(nextPage);
-          return lastPage.artists.length !== 0 ? nextPage : undefined;
-        },
-      }
-    );
+  const { data, isSuccess, hasNextPage, fetchNextPage } = useInfiniteQuery(
+    "getTopArtist",
+    ({ pageParam = 1 }) => fetchData(pageParam),
+    {
+      getNextPageParam: (lastPage, allPages) => {
+        const nextPage = allPages.length + 1;
+        // console.log(allPages);
+        // console.log(nextPage);
+        return lastPage.artists.length !== 0 ? nextPage : undefined;
+      },
+    }
+  );
 
   const handleObserver = useCallback(
     (entries) => {
@@ -60,6 +59,7 @@ function TopArtistList() {
 
   return (
     <>
+      <h4 className="top-artist-list-header">Top Artists</h4>
       <main data-testid="firstEl" className="main">
         {!isSuccess && <span data-testid="secondEl" className="loader"></span>}
 
