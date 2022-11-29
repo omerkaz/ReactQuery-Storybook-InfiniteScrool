@@ -21,6 +21,7 @@
 - [Listed Top Artist]
 - [Listed Artist Top Albums and Top Tracks]
 - [Dark Mode]
+- [Full Test Coverage]
 ---
    [React]: <https://reactjs.org/>
    [Redux]: <https://redux.js.org/>
